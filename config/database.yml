@@ -1,0 +1,22 @@
+development: &default
+  adapter: mysql2
+  encoding: utf8
+  host: db
+  database: nokidoki
+  username: root
+  password: secret
+  wait_timeout: 300
+  checkout_timeout: 15
+
+test:
+  <<: *default
+  reconnect: false
+  database: nokidoki_test
+  pool: 5
+
+production: &production
+  <<: *default
+  username: nokidoki
+  password: secret
+  host: trytry.chingchong.ap-southeast-1.rds.amazonaws.com
+  pool: 20

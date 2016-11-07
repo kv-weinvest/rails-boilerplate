@@ -1,0 +1,28 @@
+version: "2"
+
+services:
+  app:
+    build: .
+    command: ./scripts/start.sh
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/railsboiler
+    volumes_from:
+      - bundle_box
+    cpu_quota: 50000
+    cpuset: "0"
+    links:
+      - db
+      - bundle_box
+  # You are going to use this container only for storing files
+  bundle_box:
+    image: busybox        # The busybox image is one of the smallest in the Docker registry
+    volumes:
+      - /bundle_box
+  db:
+    image: mariadb
+    ports:
+      - 3336:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=secret

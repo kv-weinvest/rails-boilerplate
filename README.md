@@ -11,11 +11,15 @@ Install [Docker](https://www.docker.com/products/docker)
 
 `$ git clone https://github.com/warex03/rails-boilerplate .`
 
-2) Build and run the containers:
+2) Remove the .git folder:
+
+`$ rm -rf .git`
+
+3) Build and run the containers:
 
 `$ make up`
 
-3) Initialize the project:
+4) Initialize the project:
 
 ```
 $ make init_project
@@ -23,4 +27,4 @@ $ make setup
 $ make restart
 ```
 
-4) Check if the api is working on `http://localhost:3000`
+5) Check if the api is working on `http://localhost:3000`

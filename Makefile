@@ -1,23 +1,14 @@
 appname = railsboiler
 dexec = docker-compose exec
 
-# build the image and up the containers
 up:
 	docker-compose up
-
-#
 down:
 	docker-compose down
-
-# Initialize the project
 init_project:
 	$(dexec) app bundle exec rake init_project
-
-# Rebuild the images
 build:
 	docker-compose build
-
-# Run bundler
 bundle:
 	$(dexec) app bundle
 dbcreate:

@@ -19,8 +19,8 @@ Install [Docker](https://www.docker.com/products/docker)
 
 ```
 $ make init_project
-$ make restart
 $ make setup
+$ make restart
 ```
 
 4) Check if the api is working on `http://localhost:3000`
